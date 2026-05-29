@@ -4,3 +4,7 @@ build
 package-lock.json
 yarn.lock
 yarn-error.log
+.env
+node_modules
+build
+dist
