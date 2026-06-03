@@ -32,7 +32,7 @@
 
     
 
-    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
+    "preinstall": "npm install --package-lock-only --ignore-scripts",
 
     "start": "react-scripts start",
     "build": "cross-env CI=false NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
