@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useInjectReducer, useInjectSaga } from "utils/redux-injectors";
 import {
@@ -180,15 +180,16 @@ export default function Index(props) {
       dispatch(authActions.isLogin(props));
     }
   }, []);
-  const shouldRedirectToLogin =
+  if (
     logged == "fail" &&
     !(location.pathname.indexOf("/auth") >= 0) &&
-    !(location.pathname.indexOf("/lead-data") >= 0);
-
+    !(location.pathname.indexOf("/lead-data") >= 0)
+  ) {
+    location.assign("/auth/login");
+  }
   return (
     <div>
       <BrowserRouter>
-        {shouldRedirectToLogin && <Redirect to="/auth/login" />}
         <Route render={(props) => <AppBar {...props} />} />
         <Switch>
           <Route path="/auth" component={Authentication} />
