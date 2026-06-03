@@ -55,7 +55,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const InvoiceAdminSlice = createSlice({
@@ -150,7 +150,7 @@ export const {
 } = InvoiceAdminSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -162,7 +162,7 @@ export const selectInvoiceState = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getInvoiceState = (state: RootState) => state.invoiceAdmin;
 

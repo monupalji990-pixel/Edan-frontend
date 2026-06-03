@@ -59,7 +59,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const supplier_contactSlice = createSlice({
@@ -154,7 +154,7 @@ export const {
 } = supplier_contactSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -167,7 +167,7 @@ export const selectSupplier_contactState = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.supplier_contact;
 

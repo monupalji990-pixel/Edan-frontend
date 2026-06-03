@@ -87,7 +87,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const supplierSlice = createSlice({
@@ -239,7 +239,7 @@ export const {
 } = supplierSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -251,7 +251,7 @@ export const selectSupplierState = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.supplier;
 

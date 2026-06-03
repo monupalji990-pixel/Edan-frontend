@@ -83,7 +83,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const priceCommissionSlice = createSlice({
@@ -329,7 +329,7 @@ export const {
 } = priceCommissionSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -341,7 +341,7 @@ export const selectPriceCommission = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.priceCommission;
 

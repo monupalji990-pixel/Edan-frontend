@@ -100,7 +100,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const consumerSlice = createSlice({
@@ -266,7 +266,7 @@ export const {
 } = consumerSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -278,7 +278,7 @@ export const selectConsumerState = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.consumer;
 

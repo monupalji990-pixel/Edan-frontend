@@ -100,7 +100,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const leadSlice = createSlice({
@@ -288,7 +288,7 @@ export const {
 } = leadSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -297,7 +297,7 @@ const selectDomain = (state: RootState) => state.lead || initialState;
 export const selectLeadState = createSelector([selectDomain], (State) => State);
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.lead;
 export const LeadState = (state: RootState) => state.lead;

@@ -68,7 +68,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const siteSlice = createSlice({
@@ -165,7 +165,7 @@ export const {
 } = siteSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -174,7 +174,7 @@ const selectDomain = (state: RootState) => state.site || initialState;
 export const selectSiteState = createSelector([selectDomain], (State) => State);
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.site;
 

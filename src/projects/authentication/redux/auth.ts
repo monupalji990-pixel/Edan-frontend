@@ -128,9 +128,7 @@ export const initialState: ContainerState = {
   isSocketStatus:''
 };
 
-/**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
- */
+
 
 const authSlice = createSlice({
   name: "auth",
@@ -239,7 +237,7 @@ export const {
 } = authSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -279,7 +277,7 @@ export const selectLoggedReq = createSelector(
 );
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 
 function* authorize(props) {

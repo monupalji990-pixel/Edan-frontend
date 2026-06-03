@@ -85,7 +85,7 @@ export const initialState: ContainerState = {
 };
 
 /**
- * ====== *********************  REDUX ACTIONS && REDUCERS ******************    =======
+ *  *********************  REDUX ACTIONS && REDUCERS ******************    
  */
 
 const appointmentSlice = createSlice({
@@ -310,7 +310,7 @@ export const {
 } = appointmentSlice;
 
 /**
- * ====== *********************  REDUX SELECTOR ******************    =======
+ *  *********************  REDUX SELECTOR ******************    
  */
 
 // First select the relevant part from the state
@@ -319,7 +319,7 @@ const selectDomain = (state: RootState) => state.appointment || initialState;
 export const selectAppointmentState = createSelector([selectDomain], (State) => State);
 
 /**
- * ====== *********************  SAGA SECTION ******************    =======
+ *  *********************  SAGA SECTION ******************    
  */
 export const getState = (state: RootState) => state.appointment;
 

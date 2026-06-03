@@ -319,7 +319,7 @@ export default function SplitCommissions(props) {
                             _splitCommission(obj);
                         }
                         catch (error) {
-                            console.log("Error ==============", error)
+                            console.log("Error ", error)
                         }
                     }}
                     validationSchema={Yup.object().shape({
