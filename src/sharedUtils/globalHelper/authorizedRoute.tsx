@@ -6,7 +6,7 @@ import {
   selectLoggedUser,
 } from "../../projects/authentication/redux/auth";
 import { useSelector } from "react-redux";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import Loader from "../sharedComponents/loader";
 
@@ -40,12 +40,7 @@ export default function AuthorizedRoute(props) {
       </Route>
     );
   } else if (logged == "fail") {
-    location.replace("/auth/login");
-    return (
-      <Route path={props.path}>
-        <WaitAuthorizing />
-      </Route>
-    );
+    return <Redirect to="/auth/login" />;
   } else {
     return (
       <Route path={props.path}>
