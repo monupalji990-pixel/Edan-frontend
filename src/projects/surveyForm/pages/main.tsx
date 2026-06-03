@@ -114,7 +114,7 @@ export function MainPage(props) {
 
     let baseURL;
     if (process.env.NODE_ENV === "development") {
-        baseURL = "http://localhost:8087/api/";
+        baseURL = "https://edan-backend.onrender.com/api/";
     } else {
         baseURL = "/api/";
     }

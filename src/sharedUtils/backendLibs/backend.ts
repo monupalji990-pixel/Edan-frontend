@@ -3,7 +3,7 @@ import axios from "axios";
 export default class backend {
   constructor() {
     if (process.env.NODE_ENV === "development") {
-      this.baseURL = "http://localhost:8087/api/";
+      this.baseURL = "https://edan-backend.onrender.com/api/";
     } else {
       this.baseURL = "/api/";
     }
