@@ -28,7 +28,7 @@ export default function Filter(props) {
 
   let baseURL;
   if (process.env.NODE_ENV === "development") {
-    baseURL = "https://edan-backend.onrender.com/api/";
+    baseURL = "http://localhost:8087/api/";
   } else {
     baseURL = "/api/";
   }
