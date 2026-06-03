@@ -35,7 +35,7 @@
     "preinstall": "npm install --package-lock-only --ignore-scripts",
 
     "start": "react-scripts start",
-    "build": "cross-env CI=false NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "// ---TEMPLATE---": "Scripts will be also in the template",
     "start:prod": "npm run build && serve -s build",
