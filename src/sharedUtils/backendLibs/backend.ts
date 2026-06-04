@@ -1,9 +1,53 @@
 import axios from "axios";
 
+// Add dev-time axios logging to help debug backend requests/responses.
+// This runs once when the module is imported and captures all axios calls.
+if (process.env.NODE_ENV !== "production") {
+  axios.interceptors.request.use(
+    (req) => {
+      try {
+        // eslint-disable-next-line no-console
+        console.groupCollapsed("API Request: ", req.method?.toUpperCase(), req.url);
+        // eslint-disable-next-line no-console
+        console.log("Request headers:", req.headers);
+        // eslint-disable-next-line no-console
+        console.log("Request data:", req.data);
+        // eslint-disable-next-line no-console
+        console.groupEnd();
+      } catch (e) {}
+      return req;
+    },
+    (err) => {
+      // eslint-disable-next-line no-console
+      console.error("API Request Error:", err);
+      return Promise.reject(err);
+    }
+  );
+
+  axios.interceptors.response.use(
+    (res) => {
+      try {
+        // eslint-disable-next-line no-console
+        console.groupCollapsed("API Response: ", res.config?.method?.toUpperCase(), res.config?.url, "->", res.status);
+        // eslint-disable-next-line no-console
+        console.log("Response data:", res.data);
+        // eslint-disable-next-line no-console
+        console.groupEnd();
+      } catch (e) {}
+      return res;
+    },
+    (err) => {
+      // eslint-disable-next-line no-console
+      console.error("API Response Error:", err);
+      return Promise.reject(err);
+    }
+  );
+}
+
 export default class backend {
   constructor() {
     if (process.env.NODE_ENV === "development") {
-      this.baseURL = "http://localhost:8087/api/";
+      this.baseURL = "https://edan-backend.onrender.com/api/";
     } else {
       this.baseURL = "/api/";
     }
