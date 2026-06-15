@@ -1,8 +1,9 @@
 import axios from "axios";
 
-// Add dev-time axios logging to help debug backend requests/responses.
-// This runs once when the module is imported and captures all axios calls.
-if (process.env.NODE_ENV !== "production") {
+// Add axios logging to help debug backend requests/responses.
+// Runs once when the module is imported and captures all axios calls.
+// Enabled for production too (needed for Render troubleshooting).
+{
   axios.interceptors.request.use(
     (req) => {
       try {
@@ -46,12 +47,11 @@ if (process.env.NODE_ENV !== "production") {
 
 export default class backend {
   constructor() {
-    if (process.env.NODE_ENV === "development") {
-      this.baseURL = "https://edan-backend.onrender.com/api/";
-    } else {
-      this.baseURL = "/api/";
-    }
+// Force Render backend in all environments
+    this.baseURL = "http://localhost:8087/api/";
     this.token = localStorage.getItem("token");
+    
+    
   }
   baseURL: any;
   token: any;
@@ -103,6 +103,7 @@ export default class backend {
       })
         .then((response) => {
           that.endLoader();
+          console.log("Response from POST", response.data);
           if (response.data.status == 1001) {
             // history.push('/login');
             reject(new Error(response.data));
@@ -123,7 +124,7 @@ export default class backend {
     const that = this;
     let baseURL = "";
     if (process.env.NODE_ENV === "development") {
-      baseURL = "http://localhost:8333/price/";
+      baseURL = "http://localhost:8087/price/";
     } else {
       baseURL = "/price/";
     }
@@ -193,7 +194,7 @@ export default class backend {
 
     let baseURL = "";
     if (process.env.NODE_ENV === "development") {
-      baseURL = "http://localhost:8333/price/";
+      baseURL = "http://localhost:8087/price/";
     } else {
       baseURL = "/price/";
     }

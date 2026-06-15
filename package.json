@@ -29,11 +29,7 @@
   ],
   "scripts": {
     "// ---DEFAULT CRA---": "",
-
-    
-
     "preinstall": "npm install --package-lock-only --ignore-scripts",
-
     "start": "react-scripts start",
     "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
